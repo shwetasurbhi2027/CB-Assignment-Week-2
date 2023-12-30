@@ -13,7 +13,7 @@ function validateForm(event) {
     alert('Form submitted successfully!'); 
 }
 
-        function fetchRandomQuote() {
+       async function fetchRandomQuote() {
             fetch('https://api.quotable.io/random')
                 .then(response => response.json())
                 .then(data => {
