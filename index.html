@@ -8,12 +8,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
-    <h2>Current Weather</h2>
 
-    <div id="weatherInfo">
-       
-    </div>
 <body>
+    <h2>Random Quote</h2>
+
+    <div id="quoteContainer">
+        <!-- Quote information will be displayed here -->
+    </div>
+
+    <script>
+        
+        function fetchRandomQuote() {
+            fetch('https://api.quotable.io/random')
+                .then(response => response.json())
+                .then(data => {
+                    // Display the fetched quote information on the webpage
+                    const quoteContainer = document.getElementById('quoteContainer');
+                    const quoteInfo = `
+                        <blockquote>
+                            <p>${data.content}</p>
+                            <footer>${data.author}</footer>
+                        </blockquote>
+                    `;
+                    quoteContainer.innerHTML = quoteInfo;
+                })
+                .catch(error => {
+                    console.error('Error fetching quote:', error);
+                });
+        }
+
+        
+        window.onload = fetchRandomQuote;
+    </script>
     <div class="menu_left">WELCOME TO CELESTIAL BISCUIT!!!</div>
 <!-- <body style="background-color:bisque;"> -->
     <h1 align="center">Celestial Biscuit Shiners</h1>
