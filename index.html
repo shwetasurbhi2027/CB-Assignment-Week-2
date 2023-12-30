@@ -322,6 +322,28 @@
        
             
         </ul>
+        <h2>Contact Me</h2>
+    <form id="contactForm" onsubmit="validateForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject" required>
+            <option value="general">General Inquiry</option>
+            <option value="feedback">Feedback</option>
+            <option value="support">Technical Support</option>
+        </select>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+    
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="week6.js"></script>
 </body>
         
 
